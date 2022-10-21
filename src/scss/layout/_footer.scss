@@ -1,0 +1,10 @@
+@use "../foundation/base" as b;
+
+.l-footer {
+  padding: b.$space_xs;
+  line-height:20px;
+  text-align: center;
+  position: sticky;
+	top: 100vh;
+}
+

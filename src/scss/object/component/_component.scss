@@ -1,0 +1,15 @@
+@use "../../foundation/base" as b;
+
+// =======================================================
+// component
+// =======================================================
+.c-container {
+  box-sizing: border-box;
+  max-width: b.$contents-width;
+  margin: 0 auto;
+  margin-bottom: b.$space_3l;
+  padding: 0 b.$space_xl;
+  @include b.md() {
+    margin-bottom: b.$space_l;
+  }
+}
