@@ -3,18 +3,20 @@
 // ==============================
 // 変数
 // ==============================
-$font-color_default: #929292;
-$font-color_second: #4e4d4d;
+$font-color_default: #4e4d4d; 
+$font-color_second: #929292;
+$font-color_third: #eeeeee;
 $font-color_header: #d6d6d6;
-$font-color_res_hero: #ffff;
-$font-color_hero: #000000;
 $font-color_nav-hover: rgb(188, 188, 188);
 $bgColor: #f8f7fc;
-$back-ground-color: #f5f5f5;
-$nav-back-ground-color: rgba(255, 255, 255, 0.82);
-$btn-color: #0096a76e;
-$site-width: 1600px;
-$contents-width: 1360px;
+$back-ground-color1: #f5f5f5;
+$back-ground-color2: #4e4d4d;
+$nav-back-ground-color: #ffffffd1;
+$btn-color: #1E435B;
+$site-width: 1400px;
+$full-contents-width: 1200px;
+$md-contents-width: 959px;
+$sm-contents-width: 768px;
 $space_3s: 4px;
 $space_xxs: 8px;
 $space_xs: 16px;
@@ -24,7 +26,7 @@ $space_l: 32px;
 $space_xl: 40px;
 $space_xxl: 48px;
 $space_3l: 64px;
-$font-family_title: "Anton", sans-serif;
+$font-family_title: 'Dosis', sans-serif;
 $font-family_total: Quicksand, 游ゴシック体, "Yu Gothic", YuGothic, "ヒラギノ角ゴシック Pro", "Hiragino Kaku Gothic Pro",
     メイリオ, Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
 
@@ -42,8 +44,8 @@ $font-family_total: Quicksand, 游ゴシック体, "Yu Gothic", YuGothic, "ヒ�
 //$breakpoint-lg: 1000px !default;
 // マップ型変数を使うと便利
 $breakpoints: (
-    "sm": "screen and (max-width: 414px)",
-    "md": "screen and (max-width: 768px)",
+    "mq": "screen and (max-width: 768px)",
+    "md": "screen and (max-width: 959px)",
     "lg": "screen and (max-width: 1000px)",
     "xl": "screen and (max-width: 1200px)",
 ) !default;
@@ -55,7 +57,7 @@ $breakpoints: (
 // map-get()の第一引数に変数名、第二引数にマップ型のキーを渡すと、マップ型の値が返る
 // #{}は「インターポーレーション」といって、演算できない箇所、変数使えない箇所でも使えるようにするものcalcなどでよく使う
 // http://book.scss.jp/code/c4/08.html
-@mixin mq($breakpoint: sm) {
+@mixin mq($breakpoint: mq) {
     @media #{map-get($breakpoints, $breakpoint)} {
         @content;
     }
@@ -74,9 +76,8 @@ $breakpoints: (
 }
 
 @function rem($px) {
-    @return  math.div($px, 16) * 1rem;
+    @return math.div($px, 16) * 1rem;
 }
-
 
 // ==================================
 // base
@@ -92,7 +93,7 @@ body {
     font-family: $font-family_total;
     text-size-adjust: 100%;
     letter-spacing: rem(0.1);
-    background-color: $back-ground-color;
+    background-color: $back-ground-color1;
 }
 p,
 a {
@@ -106,7 +107,7 @@ a {
 }
 
 a:hover {
-    color: $font-color_default;
+    color: $font-color_second;
     transition: 0.3s;
     cursor: pointer;
 }
@@ -115,11 +116,11 @@ img {
     width: 100%;
     vertical-align: bottom;
 }
-button{
+button {
     background-color: transparent;
     border: none;
     cursor: pointer;
     outline: none;
     padding: 0;
     appearance: none;
-  }
+}

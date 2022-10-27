@@ -20,7 +20,17 @@ Object
 
 /* Project ------------ */
 
-// @use "object/project/_hero";
+  @use "object/project/_main";
+  @use "object/project/_top";
+  @use "object/project/_course";
+  @use "object/project/_camp";
+  @use "object/project/_goods";
+  @use "object/project/_diary";
+  @use "object/project/_about";
+  @use "object/project/_book";
+  @use "object/project/_info";
+
+
 
 /* Utility ------------ */
 /* Js ------------ */

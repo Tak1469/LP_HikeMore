@@ -1,12 +1,282 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <link rel="icon" href="img/logo/logo_name.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@800&display=swap" rel="stylesheet">
+  <link rel="apple-touch-icon" href="img/logo/logo_name.png" sizes="180x180">
+  <script src="https://kit.fontawesome.com/37442f81a6.js" crossorigin="anonymous"></script>
+  <title>HikeMore</title>
 </head>
-<body>
-  <h1>webpack separate base</h1>
+
+<body class="l-body">
+  <header class="l-header">
+    <nav class="l-nav">
+      <ul id="is-menu-animation" class="l-menu">
+        <li class="l-menu__item"><a href="#Course">Course</a></li>
+        <li class="l-menu__item"><a href="#Camp">Camp</a></li>
+        <li class="l-menu__item"><a href="#Item">Item</a></li>
+        <li class="l-menu__item"><a href="#Diary">Diary</a></li>
+        <li class="l-menu__item"><a href="#About">About</a></li>
+        <li class="l-menu__item"><a href="#Book">Book</a></li>
+      </ul>
+      <div id="is-hamburger-menu" class="l-hamburger">
+        <span class="l-hamburger__bar is-hamburger-line"></span>
+        <span class="l-hamburger__bar is-hamburger-line"></span>
+        <span class="l-hamburger__bar is-hamburger-line"></span>
+      </div>
+    </nav>
+  </header>
+
+  <main id="Top" class="p-main">
+    <!-- toplogo -->
+    <div class="p-main__logo">
+      <a href="#Top"><img src="./img/logo/logo_name.png" alt="logo"></a>
+    </div>
+    <!-- top -->
+    <section class="p-top">
+      <div class="p-top__slider">
+        <div class="p-top__img1 is_slider1"></div>
+        <div class="p-top__img2 is_slider2"></div>
+        <div class="p-top__img3 is_slider3"></div>
+      </div>
+      <div class="c-container">
+        <div class="p-top__text-area">
+          <h1 class="p-top__title namekes">toptitle</h1>
+          <p class="p-top__sub-title">
+            toptexttoptexttoptexttoptexttoptext<br>
+            toptexttoptexttoptexttoptexttoptext<br>
+            toptexttoptexttoptexttoptexttoptext<br>
+            toptexttoptexttoptexttoptexttoptext
+          </p>
+        </div>
+      </div>
+    </section>
+    <!-- course -->
+    <section id="Course" class="p-course">
+      <div class="p-course__container">
+        <div class="p-course__text-area">
+          <h1 class="c-contents__title">course title</h1>
+          <h2 class="c-contents__sub-title">course sub</h2>
+          <span class="c-contents__line1"></span>
+          <p class="c-contents__text">
+            coursetextcoursetextcoursetext<br>
+            coursetextcoursetext
+          </p>
+        </div>
+        <div class="p-course__img"></div>
+      </div>
+      <div class="c-contents__block">
+        <div class="p-course__recommend">
+          <ul class="c-contents__wrap">
+            <li class="c-contents__item">
+              <img class="p-course__item-img" src="./img/machining/climbing4.jpg" alt="courseIm4">
+              <h2>course1 detail texttexttexttexttexttext</h2>
+            </li>
+            <li class="c-contents__item">
+              <img class="p-course__item-img" src="./img/machining/climbing2.jpg" alt="courseImg2">
+              <h2>course1 detail text</h2>
+            </li>
+            <li class="c-contents__item">
+              <img class="p-course__item-img" src="./img/machining/climbing3.jpg" alt="courseImg3">
+              <h2>course1 detail text</h2>
+            </li>
+            <li class="c-contents__item">
+              <img class="p-course__item-img" src="./img/machining/climbing1.jpg" alt="courseImg1">
+              <h2>course1 detail text</h2>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <!-- camp -->
+    <section id="Camp" class="p-camp">
+      <div class="p-camp__container">
+        <div class="p-camp__text-area">
+          <h1 class="c-contents__title">camp title</h1>
+          <h2 class="c-contents__sub-title">camp sub</h2>
+          <span class="c-contents__line1"></span>
+          <p class="c-contents__text">
+            camptextcamptextcamptextcamptext<br>
+            camptextcamptextcamptextcamptextcamptext
+          </p>
+        </div>
+        <div class="p-camp__img"></div>
+      </div>
+      <div class="c-contents__block">
+        <div class="p-camp__recommend">
+          <ul class="c-contents__wrap">
+            <li class="c-contents__item">
+              <img class="p-course__item-img" src="./img/machining/camp.jpg" alt="campImg">
+              <h2>course1 detail texttexttexttexttexttext</h2>
+            </li>
+            <li class="c-contents__item">
+              <img class="p-course__item-img" src="./img/machining/camp1.jpg" alt="campImg1">
+              <h2>course1 detail text</h2>
+            </li>
+            <li class="c-contents__item">
+              <img class="p-course__item-img" src="./img/machining/camp2.jpg" alt="campImg2">
+              <h2>course1 detail text</h2>
+            </li>
+            <li class="c-contents__item">
+              <img class="p-course__item-img" src="./img/machining/camp4.jpg" alt="campImg4">
+              <h2>course1 detail text</h2>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <!-- Item -->
+    <section id="Item" class="p-goods c-container">
+      <h1 class="c-contents__title">goods title</h1>
+      <h2 class="c-contents__sub-title">goods subtitle</h2>
+      <span class="c-contents__line2"></span>
+      <p class="c-contents__desc">
+        coursetextcoursetextcoursetext<br>
+        coursetextcoursetext
+      </p>
+      <ul class="p-goods__container">
+        <li class="c-contents__item">
+          <img class="p-goods__img" src="./img/machining/item3.jpg" alt="itemImg3">
+          <h2 class="p-goods__text">camp1 detail text</h2>
+        </li>
+        <li class="c-contents__item">
+          <img class="p-goods__img" src="./img/machining/item4.jpg" alt="itemImg4">
+          <h2 class="p-goods__text">camp1 detail text</h2>
+        </li>
+        <li class="c-contents__item">
+          <img class="p-goods__img" src="./img/machining/item1.jpg" alt="itemImg1">
+          <h2 class="p-goods__text">camp1 detail text</h2>
+        </li>
+        <li class="c-contents__item">
+          <img class="p-goods__img" src="./img/machining/item2.jpg" alt="itemImg2">
+          <h2 class="p-goods__text">camp1 detail text</h2>
+        </li>
+      </ul>
+    </section>
+    <!-- Diary -->
+    <section id="Diary" class="p-diary">
+      <h1 class="c-contents__title">diary title</h1>
+      <h2 class="c-contents__sub-title">diary subtitle</h2>
+      <span class="c-contents__line2"></span>
+      <p class="c-contents__desc">
+        coursetextcoursetextcoursetext<br>
+        coursetextcoursetext
+      </p>
+      <ul class="p-diary__container">
+        <li class="p-diary__item">
+          <img class="p-diary__img" src="./img/machining/diary4.jpg" alt="diaryImg4">
+          <div class="p-diary__detail">
+            <h1 class="p-diary__title">diary1 title</h1>
+            <p class="p-diary___day">2022.10.21</p>
+            <p class="p-diary__text">diary texttext</p>
+          </div>
+        </li>
+        <li class="p-diary__item">
+          <img class="p-diary__img" src="./img/machining/diary2.jpg" alt="diaryImg2">
+          <div class="p-diary__detail">
+            <h1 class="p-diary__title">diary1 title</h1>
+            <p class="p-diary___day">2022.10.21</p>
+            <p class="p-diary__text">diary texttext</p>
+          </div>
+        </li>
+        <li class="p-diary__item">
+          <img class="p-diary__img" src="./img/machining/diary5.jpg" alt="diaryImg5">
+          <div class="p-diary__detail">
+            <h1 class="p-diary__title">diary1 title</h1>
+            <p class="p-diary___day">2022.10.21</p>
+            <p class="p-diary__text">diary texttext</p>
+          </div>
+        </li>
+        <li class="p-diary__item">
+          <img class="p-diary__img" src="./img/machining/diary3.jpg" alt="diaryImg3">
+          <div class="p-diary__detail">
+            <h1 class="p-diary__title">diary1 title</h1>
+            <p class="p-diary___day">2022.10.21</p>
+            <p class="p-diary__text">diary texttext</p>
+          </div>
+        </li>
+      </ul>
+      <a href="/" class="p-diary__more">More</a>
+    </section>
+    <!-- About -->
+    <section id="About" class="c-container">
+      <div class="p-about">
+        <div class="p-about__logo">
+          <img class="p-about__img" src="./img/logo/logo_name.png" alt="logo">
+        </div>
+        <div>
+          <h1 class="c-contents__title">about title</h1>
+          <span class="c-contents__line2"></span>
+          <p class="c-contents__text">
+            about texttexttexttexttexttext
+            about texttexttexttexttexttext <br>
+            about texttexttexttexttexttext <br>
+            about texttexttexttexttexttexts
+          </p>
+        </div>
+      </div>
+    </section>
+    <!-- Book -->
+    <section id="Book" class="p-book">
+      <div class="p-book__bg">
+        <div class="p-book__wrap">
+          <h1 class="c-contents__title">book title</h1>
+          <span class="c-contents__line2"></span>
+          <p>
+            book texttexttexttexttexttext <br>
+            book texttexttexttexttexttext book texttexttexttexttexttext <br>
+            book texttexttexttexttexttext
+          </p>
+        </div>
+      </div>
+    </section>
+    <!-- info -->
+    <section class="c-container">
+      <div class="p-info">
+        <ul class="p-info__sns">
+          <li class="p-info__item">
+            <a href="/">
+              <i class="p-info__sns-icon fa-brands fa-square-instagram"></i>
+            </a>
+          </li>
+          <li class="p-info__item">
+            <a href="/">
+              <i class="p-info__sns-icon fa-brands fa-square-facebook"></i>
+            </a>
+          </li>
+          <li class="p-info__item">
+            <a href="/">
+              <i class="p-info__sns-icon fa-brands fa-square-twitter"></i>
+            </a>
+          </li>
+          <li class="p-info__item">
+            <a href="/">
+              <i class="p-info__sns-icon fa-brands fa-square-youtube"></i>
+            </a>
+          </li>
+        </ul>
+        <ul class="p-info__announce">
+          <li class="p-info__announce-item"><a href="/">ご利用ガイド</a></li>
+          <li class="p-info__announce-item"><a href="/">会社概要</a></li>
+          <li class="p-info__announce-item"><a href="/">お問い合わせ</a></li>
+          <li class="p-info__announce-item"><a href="/">特定商取引に基づく表示</a></li>
+          <li class="p-info__announce-item"><a href="/">個人情報保護方針</a></li>
+        </ul>
+      </div>
+    </section>
+  </main>
+  <!-- footer -->
+  <footer class="l-footer">
+    <div class="l-footer__logo">
+      <img class="p-about__img" src="./img/logo/logo_name.png" alt="logo">
+    </div>
+    <p>COPYRIGHT ©2022 HOGEHOGE ALLRIGHTS RESERVED.</p>
+  </footer>
 </body>
+
 </html>

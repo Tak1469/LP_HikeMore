@@ -5,11 +5,92 @@
 // =======================================================
 .c-container {
   box-sizing: border-box;
-  max-width: b.$contents-width;
+  max-width: b.$full-contents-width;
   margin: 0 auto;
-  margin-bottom: b.$space_3l;
   padding: 0 b.$space_xl;
   @include b.md() {
-    margin-bottom: b.$space_l;
+    max-width: b.$md-contents-width;
+    margin: b.$space_m;
+    padding: 0 b.$space_xl;
+  }
+  @include b.mq() {
+    margin: auto;
+  }
+}
+
+.c-contents {
+  &__block {
+    padding-top: 400px;
+    
+  }
+  &__item {
+    width: calc(25% - 32px);
+    height: calc(25%);
+    margin: 8px;
+    @include b.md() {
+      width: calc(25% - 24px);
+      height: calc(25%);
+    }
+    @include b.mq() {
+      width: calc(50% - 16px);
+      height: calc(50%);
+    }
+  }
+  &__wrap {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 1200px;
+    padding: 150px 20px 60px;
+    margin: 0 auto;
+    @include b.md() {
+      padding: 64px 16px 20px;
+    }
+  }
+  &__title {
+    font-size: b.rem(32);
+    font-weight: bold;
+  }
+  &__line1 {
+    margin: 40px;
+    &:after {
+      display: block;
+      position: absolute;
+      width: 200px;
+      height: 2px;
+      left: 50%;
+      transform: translateX(-50%);
+      content: "";
+      background: b.$font-color_default;
+      @include b.md() {
+        width: 150px;
+      }
+      @include b.mq() {
+        width: 100px;
+      }
+    }
+  }
+  &__line2 {
+    margin: 40px;
+    &:after {
+      display: block;
+      position: absolute;
+      width: 200px;
+      height: 2px;
+      left: 50%;
+      margin-left: -100px;
+      content: "";
+      background: b.$font-color_default;
+    }
+  }
+  &__sub-title {
+    font-size: b.rem(16);
+    margin-bottom: 20px;
+  }
+  &__text {
+    font-size: b.rem(16);
+  }
+  &__desc{
+    margin-bottom: 20px;
   }
 }

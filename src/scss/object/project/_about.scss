@@ -1,0 +1,11 @@
+@use "../../foundation/base" as b;
+
+.p-about {
+  margin: 20px auto;
+  &__logo {
+    width: 250px;
+    height: auto;
+    margin: 0 auto;
+    margin-bottom: 40px;
+  }
+}

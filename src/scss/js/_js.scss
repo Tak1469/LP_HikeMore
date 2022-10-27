@@ -1,2 +1,24 @@
 @use "../foundation/base" as b;
 
+.js-show-menu {
+  text-align: center;
+  animation: fade-in 0.4s;
+  left: 0;
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+    left: 100vw;
+  }
+  100% {
+    opacity: 1;
+    left: 0;
+  }
+}
+
+.js-nav-bgcolor{
+  transition: .4s;
+  // background-color: #cfcfcf89;
+  background-color: #3b79a361;
+}

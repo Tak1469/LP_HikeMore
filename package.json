@@ -1,5 +1,5 @@
 {
-  "name": "webpack_base",
+  "name": "lp-hikemore",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
@@ -49,5 +49,13 @@
     "jquery": "^3.6.0",
     "webpack-watched-glob-entries-plugin": "^2.2.5"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kurosu31/HikeMore.git"
+  },
+  "bugs": {
+    "url": "https://github.com/kurosu31/HikeMore/issues"
+  },
+  "homepage": "https://github.com/kurosu31/HikeMore#readme",
   "description": ""
 }

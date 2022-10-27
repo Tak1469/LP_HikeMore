@@ -18,12 +18,11 @@
   max-width: b.$site-width;
   height: 100px;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   line-height: 100px;
   transition: all 0.3s;
   padding: 0 b.$space_xs;
   @include b.md() {
-    height: 70px;
     line-height: 70px;
   }
   &__title {
@@ -37,48 +36,54 @@
 .l-menu {
   font-family: b.$font-family_title;
   display: flex;
-  text-align: center;
-  width: 500px;
+  width: 1200px;
+  justify-content: space-between;
   font-weight: bold;
   transition: 0.3s;
   font-size: b.rem(24);
+  left: 100vw;
   @include b.md() {
     flex-direction: column;
     position: fixed;
     z-index: 3;
     width: 100%;
-    height: 100vh;
-    padding: 100px 0%;
+    height: calc(100% - 100px);
+    padding: 100px 0;
     overflow: auto;
     background: b.$bgColor;
     font-size: b.rem(44);
-    left: 100vw;
+    animation: fade-out 0.4s;
   }
   &__item {
     margin: 0 auto;
     position: relative;
     @include b.md() {
-      color: b.$font-color_default;
       padding: b.$space_m;
     }
     &::after {
       position: absolute;
-      left: 0;
+      left: -10px;
+      top: 35%;
       content: "";
-      width: 100%;
-      height: 2px;
-      background: b.$font-color_nav-hover;
-      bottom: 40px;
-      opacity: 0;
+      width: 2px;
+      height: 30px;
+      background: b.$font-color_second;
+      opacity: 1;
       visibility: hidden;
       transition: 0.3s;
+      @include b.md() {
+        left: -10px;
+        top: 35%;
+        width: 2px;
+        height: 50px;
+      }
     }
     &:hover::after {
       visibility: visible;
-      bottom: 30px;
+      left: 80px;
       opacity: 1;
       @include b.md() {
-        bottom: 15px;
+        left: 160px;
       }
     }
   }
@@ -90,55 +95,71 @@
   &__link:hover {
     color: b.$font-color_default;
   }
-  &__trigger {
-    display: none;
-    transition: 0.4s;
-    box-sizing: border-box;
-    position: relative;
-    margin: b.$space_s;
-    width: 40px;
-    height: 32px;
-    z-index: 3;
-    cursor: pointer;
-    @include b.mq() {
-      display: inline-block;
-    }
-    @include b.md() {
-      display: inline-block;
-    }
-  }
 }
+
 .res-active {
   left: 0vw;
 }
-.l-line {
-  display: inline-block;
-  transition: all 0.4s;
+
+.l-hamburger {
+  display: none;
+  transition: 0.4s;
   box-sizing: border-box;
   position: absolute;
-  left: 0;
-  width: 100%;
-  height: 4px;
-  background: b.$font-color_header;
-  border-radius: 4px;
-  &:nth-of-type(1) {
-    top: 0;
+  margin: b.$space_s;
+  width: 70px;
+  height: 70px;
+  right: 0;
+  z-index: 3;
+  cursor: pointer;
+  @include b.mq() {
+    display: block;
   }
-  &:nth-of-type(2) {
-    top: 14px;
+  @include b.md() {
+    display: block;
   }
-  &:nth-of-type(3) {
-    bottom: 0;
+
+  &__bar {
+    display: inline-block;
+    transition: all 0.4s;
+    box-sizing: border-box;
+    position: absolute;
+    width: 50px;
+    height: 4px;
+    margin: 15px;
+    background: b.$font-color_default;
+    border-radius: 4px;
+    &:nth-of-type(1) {
+      top: 0;
+    }
+    &:nth-of-type(2) {
+      top: 18px;
+    }
+    &:nth-of-type(3) {
+      bottom: 0;
+    }
   }
 }
-.line-active {
+.hamburger__bar-active {
   &:nth-of-type(1) {
-    transform: translateY(12px) rotate(-45deg);
+    transform: translateY(17px) rotate(-45deg);
   }
   &:nth-of-type(2) {
     opacity: 0;
   }
   &:nth-of-type(3) {
-    transform: translateY(-15px) rotate(45deg);
+    transform: translateY(-17px) rotate(45deg);
+  }
+}
+
+@keyframes fade-out {
+  0% {
+    opacity: 1;
+    left: 0;
+  }
+  100% {
+    opacity: 0;
+    left: 100vw;
+    display: none;
   }
 }
