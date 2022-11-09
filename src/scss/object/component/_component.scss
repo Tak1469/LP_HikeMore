@@ -7,11 +7,9 @@
   box-sizing: border-box;
   max-width: b.$full-contents-width;
   margin: 0 auto;
-  padding: 0 b.$space_xl;
   @include b.md() {
     max-width: b.$md-contents-width;
     margin: b.$space_m;
-    padding: 0 b.$space_xl;
   }
   @include b.mq() {
     margin: auto;
@@ -19,9 +17,24 @@
 }
 
 .c-contents {
-  &__block {
+  &__block-l {
     padding-top: 400px;
-    
+  }
+  &__block-m {
+    padding-top: 200px;
+    @include b.md(){
+      padding-top: 0;
+    }
+  }
+  &__text-block {
+    position: absolute;
+    top: 130px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    @include b.md(){
+      position: static;
+    }
   }
   &__item {
     width: calc(25% - 32px);
@@ -90,7 +103,16 @@
   &__text {
     font-size: b.rem(16);
   }
-  &__desc{
+  &__desc {
     margin-bottom: 20px;
+  }
+}
+
+.c-item {
+  filter: brightness(100%);
+  transition: all 0.4s;
+  &:hover {
+    filter: brightness(120%);
+    transition: all 0.4s;
   }
 }

@@ -1,0 +1,30 @@
+@use "../foundation/base" as b;
+
+// =======================================================
+// utility
+// =======================================================
+
+.u-scroll__top {
+  height: 90px;
+  font-family: b.$font-family_title;
+  position: fixed;
+  bottom: -150px;
+  right: 30px;
+  font-size: b.rem(50);
+  margin: 15px;
+  padding: 15px;
+  cursor: pointer;
+  z-index: 10;
+  transition: 0.4s;
+  @include b.md() {
+    margin: 0;
+    padding: 0;
+  }
+  &:hover {
+    color: b.$font-color_second;
+  }
+  &-text {
+    font-size: b.rem(30);
+    line-height: 10px;
+  }
+}

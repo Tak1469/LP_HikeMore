@@ -1,88 +1,109 @@
 export function parallax() {
 
-  //<!-- 画面の高さを取得 -->
-  var windowHeight = window.outerHeight;
-  console.log($(window).height());
-  console.log(window.outerHeight);
-  console.log(windowHeight);
-  //<!-- スクロール時に実行 -->
-  window.addEventListener("scroll", function () {
-    console.log(window.scrollY);
+  // 画面の高さを取得
+  let windowHeight = window.innerHeight;
+  // 画面の幅を取得
+  let windowWidth = window.innerWidth;
+
+
+  // 画面の高さ,幅s レスポンシブ対応用
+  window.addEventListener('load', update_window_size);
+  window.addEventListener('resize', function () {
+    update_window_size();
   });
-  $(window).on("scroll", function () {
-
-    //<!-- スクロールの位置を取得 -->
-    // var scroll = $(window).scrollTop();
-
-    // //<!-- 対象ID -->
-    // var section1 = [
-    //   "para__img1",
-    //   "para__img2",
-    // ];
-
-    // var section2 = [
-    //   "para__img3",
-    //   "para__img4",
-    // ];a
-
-    // var section4 = [
-    //   "para__img5",
-    //   "para__img6",
-    // ];
-    // var section5 = [
-    //   "para__img7",
-    //   "para__img8",
-    // ];
-
-    // //<!-- ループ -->
-    // $.each(section1, function (i, val) {
-    //   //<!-- 要素が画面内に入った瞬間を検知 -->
-    //   if (scroll + windowHeight > $('.' + val).offset().top) {
-    //     let num = Math.floor(((scroll) - $('.parallax1').offset().top)) / 100;
-    //     //<!-- スクロールを元に要素の動きを調整 -->
-    //     $('.para__img1').css('margin-left', -($('.para__img1').offset().top - scroll) / 8);
-    //     $('.para__img2').css('margin-top', ($('.para__img2').offset().top - scroll) / 5);
-    //     $('.para__img1').css('opacity', num);
-    //     $('.para__img2').css('opacity', num);
-    //   }
-    // });
-
-    // $.each(section2, function (i, val) {
-    //   //<!-- 要素が画面内に入った瞬間を検知 -->
-    //   if (scroll + windowHeight > $('.' + val).offset().top) {
-    //     let num = Math.floor(((scroll + 100) - $('.parallax2').offset().top)) / 100;
-    //     //<!-- スクロールを元に要素の動きを調整 -->
-    //     $('.para__img3').css('margin-top', ($('.para__img3').offset().top - scroll) / 8);
-    //     $('.para__img4').css('margin-top', ($('.para__img4').offset().top - scroll) / 5);
-    //     $('.para__img3').css('opacity', num);
-    //     $('.para__img4').css('opacity', num);
-    //   }
-    // });
-
-    // $.each(section4, function (i, val) {
-    //   //<!-- 要素が画面内に入った瞬間を検知 -->
-    //   if (scroll + windowHeight > $('.' + val).offset().top) {
-    //     let num = Math.floor(((scroll + 100) - $('.parallax4').offset().top)) / 100;
-    //     //<!-- スクロールを元に要素の動きを調整 -->
-    //     $('.para__img5').css('margin-top', ($('.para__img5').offset().top - scroll) / 8);
-    //     $('.para__img6').css('margin-left', ($('.para__img6').offset().top - scroll) / 5);
-    //     $('.para__img5').css('opacity', num);
-    //     $('.para__img6').css('opacity', num);
-    //   }
-    // });
-
-    // $.each(section5, function (i, val) {
-    //   //<!-- 要素が画面内に入った瞬間を検知 -->
-    //   if (scroll + windowHeight > $('.' + val).offset().top) {
-    //     let num = Math.floor(((scroll + 100) - $('.parallax5').offset().top)) / 100;
-    //     //<!-- スクロールを元に要素の動きを調整 -->
-    //     $('.para__img7').css('margin-top', ($('.para__img7').offset().top - scroll) / 5);
-    //     $('.para__img8').css('margin-top', ($('.para__img8').offset().top - scroll) / 3);
-    //     $('.para__img7').css('opacity', num);
-    //     $('.para__img8').css('opacity', num);
-    //   }
-    // });
-
+  function update_window_size() {
+    windowHeight = window.innerHeight;
+    windowWidth = window.innerWidth;
+  }
+  const sections = [];
+  const section1 = 'is-parallax-course1';
+  const section2 = 'is-parallax-course2';
+  const section3 = 'is-parallax-camp1';
+  const section4 = 'is-parallax-camp2';
+  const section5 = 'is-parallax-text1';
+  const section6 = 'is-parallax-text2';
+  const section7 = 'is-parallax-text3';
+  const section8 = 'is-parallax-text4';
+  sections.push(section1, section2, section3, section4, section5, section6, section7, section8);
+  // console.log(sections);
+  // top 表示
+  const topElement = document.getElementById('is-parallax-top');
+  // top用 opacity設定
+  window.addEventListener('load', function () {
+    topElement.style.opacity = 1;
+  });
+  // スクロール時に実行
+  window.addEventListener('scroll', function () {
+    // スクロールの位置を取得
+    const scroll = document.documentElement.scrollTop;
+    // console.log(sections.length);
+    if (windowWidth > 958) {
+      // top parallax アニメーション
+      topTextParallax(scroll);
+      // course parallax アニメーション
+      parallaxWarp(scroll, section1, 100);
+      parallaxLeftDirection(scroll, section2, 100);
+      // camp parallax アニメーション
+      parallaxWarp(scroll, section3, 200);
+      parallaxRightDirection(scroll, section4, -500);
+      // item tile parallax アニメーション
+      parallaxWarp(scroll, section5, -1200);
+      // diary tile parallax アニメーション
+      parallaxWarp(scroll, section6, -1700);
+      // about tile parallax アニメーション
+      parallaxWarp(scroll, section7, -2700);
+      // book  parallax アニメーション
+      parallaxWarp(scroll, section8, -2800);
+    } else {
+      for (let i = 0; i < sections.length; i++) {
+        const sectionElement = document.getElementById(sections[i]);
+        sectionElement.style.opacity = 1;
+      }
+    }
   });
 
+  // top parallax アニメーション
+  function topTextParallax(scroll) {
+    let heightNum = Math.floor((topElement.getBoundingClientRect().top - scroll)) / 20;
+    topElement.style.marginTop = heightNum + 'px';
+  }
+
+  // parallax opacity, marginLeft  アニメーション
+  function parallaxLeftDirection(scroll, section, reg) {
+    const sectionElement = document.getElementById(section);
+    const elemTop = sectionElement.getBoundingClientRect().top + window.pageYOffset;
+    if (windowHeight + scroll > elemTop) {
+      let opacityNum = Math.floor(((scroll + reg) - sectionElement.getBoundingClientRect().top)) / 100;
+      let heightNum = Math.floor((sectionElement.getBoundingClientRect().top - scroll)) / 20;
+      sectionElement.style.marginLeft = heightNum + 'px';
+      sectionElement.style.opacity = opacityNum;
+    } else {
+      sectionElement.style.opacity = 0;
+    }
+  }
+  // parallax opacity, marginRight アニメーション
+  function parallaxRightDirection(scroll, section, reg) {
+    const sectionElement = document.getElementById(section);
+    const elemTop = sectionElement.getBoundingClientRect().top + window.pageYOffset;
+    if (windowHeight + scroll > elemTop) {
+      let opacityNum = Math.floor(((scroll + reg) - sectionElement.getBoundingClientRect().top)) / 100;
+      let heightNum = Math.floor((sectionElement.getBoundingClientRect().top - scroll)) / 20;
+      sectionElement.style.marginRight = heightNum + 'px';
+      sectionElement.style.opacity = opacityNum;
+    } else {
+      sectionElement.style.opacity = 0;
+    }
+  }
+
+  // parallax opacity, marginTop アニメーション
+  function parallaxWarp(scroll, section, reg) {
+    const sectionElement = document.getElementById(section);
+    const elemTop = sectionElement.getBoundingClientRect().top + window.pageYOffset;
+    if (windowHeight + scroll > elemTop) {
+      let opacityNum = Math.floor(((scroll + reg) - sectionElement.getBoundingClientRect().top)) / 100;
+      let heightNum = Math.floor((sectionElement.getBoundingClientRect().top - scroll) / 20);
+      sectionElement.style.marginTop = heightNum + 'px';
+      sectionElement.style.opacity = opacityNum;
+    }
+  }
 }

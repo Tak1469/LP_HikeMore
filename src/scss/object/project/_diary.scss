@@ -1,10 +1,13 @@
 @use "../../foundation/base" as b;
 
-
-.p-diary{
-  padding: 40px 0;
+.p-diary {
+  position: relative;
+  margin: 0 auto;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
   background-color: b.$font-color_header;
-  &__container{
+  &__container {
+    position: relative;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -13,38 +16,45 @@
       border-right: 0px;
     }
   }
-  &__item{
+  &__item {
     width: calc(24% - 1px);
     border-right: solid 1px b.$font-color_second;
-    @include b.md(){
+    @include b.md() {
       width: calc(50% - 1px);
+      &:nth-child(even) {
+        border-right: 0px;
+      }
     }
-    @include b.mq(){
+    @include b.mq() {
       width: 100%;
+      border-right: 0px;
     }
   }
-  &__img{
+  &__img {
     width: 100%;
     height: auto;
   }
-  &__detail{
+  &__detail {
     padding: 10px;
     background: b.$back-ground-color1;
   }
-  &__title{
+  &__title {
     font-size: b.rem(16);
     font-weight: bold;
   }
-  &__day{
+  &__day {
   }
-  &__text{
+  &__text {
   }
-  &__more{
+  &__more {
     display: inline-block;
     margin-top: 40px;
     padding: 10px 80px;
     font-size: b.rem(24);
     color: b.$font-color_third;
     background: b.$btn-color;
+    @include b.mq() {
+      margin-top: 20px;
+    }
   }
 }

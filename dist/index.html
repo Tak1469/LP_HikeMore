@@ -32,10 +32,18 @@
     </nav>
   </header>
 
-  <main class="p-main">
+  <main id="Top" class="p-main">
+    <!-- loading -->
+    <!-- top to scroll -->
+    <div id="is-scroll-change-icon" class="u-scroll__top">
+      <div class="u-scroll__top-icon-up">
+        <i class="fa-regular fa-circle-up"></i>
+        <p class="u-scroll__top-text"> Top</p>
+      </div>
+    </div>
     <!-- toplogo -->
     <div class="p-main__logo">
-      <a href="/"><img src="./img/logo_name.png" alt="logo"></a>
+      <a href="#Top"><img src="./img/logo_name.png" alt="logo"></a>
     </div>
     <!-- top -->
     <section class="p-top">
@@ -45,7 +53,7 @@
         <div class="p-top__img3 is_slider3"></div>
       </div>
       <div class="c-container">
-        <div class="p-top__text-area">
+        <div id="is-parallax-top" class="p-top__text-area js-para-animation">
           <h1 class="p-top__title namekes">toptitle</h1>
           <p class="p-top__sub-title">
             toptexttoptexttoptexttoptexttoptext<br>
@@ -59,7 +67,7 @@
     <!-- course -->
     <section id="Course" class="p-course">
       <div class="p-course__container">
-        <div class="p-course__text-area">
+        <div id="is-parallax-course1" class="p-course__text-area js-para-animation">
           <h1 class="c-contents__title">course title</h1>
           <h2 class="c-contents__sub-title">course sub</h2>
           <span class="c-contents__line1"></span>
@@ -68,24 +76,24 @@
             coursetextcoursetext
           </p>
         </div>
-        <div class="p-course__img"></div>
+        <div id="is-parallax-course2" class="p-course__img js-para-animation"></div>
       </div>
       <div class="c-contents__block">
         <div class="p-course__recommend">
           <ul class="c-contents__wrap">
-            <li class="c-contents__item">
+            <li class="c-contents__item is-fadein">
               <img class="p-course__item-img" src="./img/climbing4.jpg" alt="courseIm4">
               <h2>course1 detail texttexttexttexttexttext</h2>
             </li>
-            <li class="c-contents__item">
+            <li class="c-contents__item is-fadein">
               <img class="p-course__item-img" src="./img/climbing2.jpg" alt="courseImg2">
               <h2>course1 detail text</h2>
             </li>
-            <li class="c-contents__item">
+            <li class="c-contents__item is-fadein">
               <img class="p-course__item-img" src="./img/climbing3.jpg" alt="courseImg3">
               <h2>course1 detail text</h2>
             </li>
-            <li class="c-contents__item">
+            <li class="c-contents__item is-fadein">
               <img class="p-course__item-img" src="./img/climbing1.jpg" alt="courseImg1">
               <h2>course1 detail text</h2>
             </li>
@@ -96,7 +104,7 @@
     <!-- camp -->
     <section id="Camp" class="p-camp">
       <div class="p-camp__container">
-        <div class="p-camp__text-area">
+        <div id="is-parallax-camp1" class="p-camp__text-area js-para-animation">
           <h1 class="c-contents__title">camp title</h1>
           <h2 class="c-contents__sub-title">camp sub</h2>
           <span class="c-contents__line1"></span>
@@ -105,7 +113,7 @@
             camptextcamptextcamptextcamptextcamptext
           </p>
         </div>
-        <div class="p-camp__img"></div>
+        <div id="is-parallax-camp2" class="p-camp__img js-para-animation"></div>
       </div>
       <div class="c-contents__block">
         <div class="p-camp__recommend">

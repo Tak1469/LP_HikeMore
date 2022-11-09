@@ -2,8 +2,11 @@
 
 
 .p-goods{
-  margin: 20px auto;
+  position: relative;
+  margin: 0 auto;
+  margin-bottom: 20px;
   &__container{
+    position: relative;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;

@@ -5,6 +5,9 @@
 // =======================================================
 
 .p-info {
+  position: relative;
+  margin: 0 auto;
+  margin-bottom: 20px;
   &__sns {
     display: flex;
     flex: wrap;

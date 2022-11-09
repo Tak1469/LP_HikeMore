@@ -2,6 +2,8 @@
 
 .p-camp {
   position: relative;
+  margin: 0 auto;
+  margin-bottom: 20px;
   &__container {
   }
   &__img {
@@ -21,7 +23,7 @@
   }
   &__text-area {
     position: absolute;
-    top: 50px;
+    top: 100px;
     right: 80%;
     width: 400px;
     height: 400px;
@@ -33,6 +35,7 @@
     border-radius: 5px;
     z-index: 2;
     @include b.md() {
+      top: 50px;
       width: 350px;
       height: 350px;
     }

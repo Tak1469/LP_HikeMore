@@ -15,6 +15,7 @@
     height: auto;
     margin: 0 auto;
     margin-bottom: 40px;
+    z-index: 10;
     @include b.md() {
       position: fixed;
       width: 130px;
@@ -22,7 +23,6 @@
       top: 0;
       left: 0;
       margin: 10px;
-      z-index: 11;
     }
   }
 }

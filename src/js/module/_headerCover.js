@@ -1,17 +1,17 @@
 export function headerCover() {
   console.log('headerCover');
-  const $headerElem = document.querySelectorAll('.l-header');
-  const rect = window.outerHeight;
+  const $navElem = document.querySelectorAll('.l-nav');
   const hederHight = 100;
-  console.log($headerElem);
-  console.log(rect);
+  const resWidth =  959;
   window.addEventListener('scroll', function () {
-    const offset = window.scrollY;
-    if (hederHight < offset) {
-      console.log(offset);
-      $headerElem[0].classList.add('js-nav-bgcolor');
-    }else{
-      $headerElem[0].classList.remove('js-nav-bgcolor');
+    const offsetX = window.outerWidth;
+    const offsetY = window.scrollY;
+    const triggerY = hederHight < offsetY;
+    const resTriggerX = offsetX > resWidth;
+    if (triggerY && resTriggerX) {
+      $navElem[0].classList.add('js-nav-bgcolor');
+    } else {
+      $navElem[0].classList.remove('js-nav-bgcolor');
     }
   });
 }

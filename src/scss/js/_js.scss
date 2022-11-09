@@ -1,12 +1,122 @@
 @use "../foundation/base" as b;
 
+// loading animation
+.js-loading {
+  font-family: b.$font-family_title;
+  width: 100vw;
+  height: 100vh;
+  background: #ffff;
+  transition: all 1s;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+}
+
+.js-loaded {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.js-animate {
+  &__text {
+    font-size: 50px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    @include b.md() {
+      font-size: 30px;
+    }
+  }
+  &__logo {
+    width: 120px;
+    height: 100px;
+    @include b.md() {
+      width: 90px;
+      height: 70px;
+    }
+  }
+  &__text span {
+    display: inline-block;
+  }
+  &__text span:nth-of-type(2) {
+    animation-delay: 0.05s;
+  }
+  &__text span:nth-of-type(3) {
+    animation-delay: 0.1s;
+  }
+  &__text span:nth-of-type(4) {
+    animation-delay: 0.15s;
+  }
+  &__text span:nth-of-type(5) {
+    animation-delay: 0.2s;
+  }
+  &__text span:nth-of-type(6) {
+    animation-delay: 0.25s;
+  }
+  &__text span:nth-of-type(7) {
+    animation-delay: 0.3s;
+  }
+  &__text span:nth-of-type(8) {
+    animation-delay: 0.35s;
+  }
+  &__text span:nth-of-type(9) {
+    animation-delay: 0.4s;
+  }
+}
+
+.js-wave span {
+  color: b.$font-color_default;
+  opacity: 0;
+  animation: wave 0.3s forwards;
+}
+
+@keyframes wave {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.2;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+// top slider
+.js-slider {
+  &__wrap {
+    position: relative;
+    overflow: hidden;
+  }
+}
+.js-slider {
+  &__img {
+    opacity: 0;
+    transform: scale(1);
+    transition: opacity 2s linear, transform 3s linear; //秒数に注意
+    position: relative;
+    &:not(:first-child) {
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
+  }
+  &__img-show{
+    opacity: 1;
+  }
+}
+
+// hamburger animation
 .js-show-menu {
   text-align: center;
-  animation: fade-in 0.4s;
+  animation: fade-in-menu 0.4s;
   left: 0;
 }
 
-@keyframes fade-in {
+@keyframes fade-in-menu {
   0% {
     opacity: 0;
     left: 100vw;
@@ -17,8 +127,81 @@
   }
 }
 
-.js-nav-bgcolor{
-  transition: .4s;
-  // background-color: #cfcfcf89;
+// scrollTop animation
+.js-show-scroll-top-icon {
+  animation: fade-in-scroll-top-icon 0.4s;
+  bottom: 30px;
+}
+
+@keyframes fade-in-scroll-top-icon {
+  0% {
+    opacity: 0;
+    bottom: -150px;
+  }
+  100% {
+    opacity: 1;
+    bottom: 30px;
+  }
+}
+
+// nav bgColor animation
+.js-nav-bgcolor {
+  transition: 0.4s;
   background-color: #3b79a361;
+}
+
+// parallax animation
+.js-para-animation {
+  opacity: 0;
+  transition-duration: 0.7s;
+  transition-delay: 0s;
+  transition-timing-function: ease-out;
+}
+
+// fadein item animation
+.is-fadein {
+  position: relative;
+  opacity: 0;
+  top: -40px;
+  transition-duration: 0.7s;
+}
+.js-fadein-show {
+  opacity: 1;
+  top: 0;
+}
+.js-fadein-show:nth-of-type(1) {
+  transition-delay: 0s;
+}
+.js-fadein-show:nth-of-type(2) {
+  transition-delay: 0.2s;
+}
+.js-fadein-show:nth-of-type(3) {
+  transition-delay: 0.4s;
+}
+.js-fadein-show:nth-of-type(4) {
+  transition-delay: 0.6s;
+}
+
+// slidein item animation
+.is-slideinleft {
+  position: relative;
+  opacity: 0;
+  left: -100px;
+  transition-duration: 0.7s;
+}
+.js-slidein-show {
+  opacity: 1;
+  left: 0;
+}
+.js-slidein-show:nth-of-type(1) {
+  transition-delay: 0s;
+}
+.js-slidein-show:nth-of-type(2) {
+  transition-delay: 0.2s;
+}
+.js-slidein-show:nth-of-type(3) {
+  transition-delay: 0.4s;
+}
+.js-slidein-show:nth-of-type(4) {
+  transition-delay: 0.6s;
 }
