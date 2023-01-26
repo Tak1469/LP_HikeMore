@@ -25,5 +25,3 @@ scrollTop();
 fadeInItem();
 slideInItem();
 topSlider();
-
-console.log('indexはokです');

@@ -5,16 +5,18 @@ export function parallax() {
   // 画面の幅を取得
   let windowWidth = window.innerWidth;
 
-
-  // 画面の高さ,幅s レスポンシブ対応用
-  window.addEventListener('load', update_window_size);
+  // 画面の高さ レスポンシブ対応用
+  window.addEventListener('load', update_window_size());
+  // 画面の幅 レスポンシブ対応用
   window.addEventListener('resize', function () {
     update_window_size();
   });
+  // 画面の幅と高さを取得
   function update_window_size() {
     windowHeight = window.innerHeight;
     windowWidth = window.innerWidth;
   }
+  // パララックスしたい要素を設定
   const sections = [];
   const section1 = 'is-parallax-course1';
   const section2 = 'is-parallax-course2';
@@ -25,7 +27,6 @@ export function parallax() {
   const section7 = 'is-parallax-text3';
   const section8 = 'is-parallax-text4';
   sections.push(section1, section2, section3, section4, section5, section6, section7, section8);
-  // console.log(sections);
   // top 表示
   const topElement = document.getElementById('is-parallax-top');
   // top用 opacity設定
@@ -34,9 +35,9 @@ export function parallax() {
   });
   // スクロール時に実行
   window.addEventListener('scroll', function () {
-    // スクロールの位置を取得
-    const scroll = document.documentElement.scrollTop;
-    // console.log(sections.length);
+    // Y方向のスクロール量を取得
+    const scroll = window.pageYOffset;
+    // レスポンシブ対応 whidthが958px以上の場合、発火
     if (windowWidth > 958) {
       // top parallax アニメーション
       topTextParallax(scroll);
@@ -55,6 +56,7 @@ export function parallax() {
       // book  parallax アニメーション
       parallaxWarp(scroll, section8, -2800);
     } else {
+      // それ以外は通常表示
       for (let i = 0; i < sections.length; i++) {
         const sectionElement = document.getElementById(sections[i]);
         sectionElement.style.opacity = 1;
@@ -64,18 +66,26 @@ export function parallax() {
 
   // top parallax アニメーション
   function topTextParallax(scroll) {
+    // heightの数値
     let heightNum = Math.floor((topElement.getBoundingClientRect().top - scroll)) / 20;
+    // スタイルに反映
     topElement.style.marginTop = heightNum + 'px';
   }
 
   // parallax opacity, marginLeft  アニメーション
   function parallaxLeftDirection(scroll, section, reg) {
+    // 実行要素を取得
     const sectionElement = document.getElementById(section);
+    // topから要素までのY軸を取得
     const elemTop = sectionElement.getBoundingClientRect().top + window.pageYOffset;
+    // 画面にされた場合
     if (windowHeight + scroll > elemTop) {
+      // opacityの数値
       let opacityNum = Math.floor(((scroll + reg) - sectionElement.getBoundingClientRect().top)) / 100;
-      let heightNum = Math.floor((sectionElement.getBoundingClientRect().top - scroll)) / 20;
-      sectionElement.style.marginLeft = heightNum + 'px';
+      // leftの数値
+      let leftNum = Math.floor((sectionElement.getBoundingClientRect().top - scroll)) / 20;
+      // スタイルに反映
+      sectionElement.style.marginLeft = leftNum + 'px';
       sectionElement.style.opacity = opacityNum;
     } else {
       sectionElement.style.opacity = 0;
@@ -83,12 +93,18 @@ export function parallax() {
   }
   // parallax opacity, marginRight アニメーション
   function parallaxRightDirection(scroll, section, reg) {
+    // 実行要素を取得
     const sectionElement = document.getElementById(section);
+    // 要素の高さを取得
     const elemTop = sectionElement.getBoundingClientRect().top + window.pageYOffset;
+    // 画面にされた場合
     if (windowHeight + scroll > elemTop) {
+      // opacityの数値
       let opacityNum = Math.floor(((scroll + reg) - sectionElement.getBoundingClientRect().top)) / 100;
-      let heightNum = Math.floor((sectionElement.getBoundingClientRect().top - scroll)) / 20;
-      sectionElement.style.marginRight = heightNum + 'px';
+      // rightの数値
+      let rightNum = Math.floor((sectionElement.getBoundingClientRect().top - scroll)) / 20;
+      // スタイルに反映
+      sectionElement.style.marginRight = rightNum + 'px';
       sectionElement.style.opacity = opacityNum;
     } else {
       sectionElement.style.opacity = 0;
@@ -97,11 +113,17 @@ export function parallax() {
 
   // parallax opacity, marginTop アニメーション
   function parallaxWarp(scroll, section, reg) {
+    // 実行要素を取得
     const sectionElement = document.getElementById(section);
+    // 各要素のtopからの高さを取得
     const elemTop = sectionElement.getBoundingClientRect().top + window.pageYOffset;
+    // 画面にされた場合
     if (windowHeight + scroll > elemTop) {
+      // opacityの数値
       let opacityNum = Math.floor(((scroll + reg) - sectionElement.getBoundingClientRect().top)) / 100;
+      // heightの数値
       let heightNum = Math.floor((sectionElement.getBoundingClientRect().top - scroll) / 20);
+      // スタイルに反映
       sectionElement.style.marginTop = heightNum + 'px';
       sectionElement.style.opacity = opacityNum;
     }

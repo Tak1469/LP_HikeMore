@@ -8,5 +8,4 @@ export function hamburger() {
     });
     $menuElem.classList.toggle('js-show-menu');
   });
-console.log('hamburger OK!');
 }

@@ -1,9 +1,11 @@
 export function scrollTop() {
+  // topへ戻るアイコン要素取得
   const $changeIcon = document.getElementById('is-scroll-change-icon');
 
   scrollToTop();
   showScrollToTopIcon();
 
+  // スクロール表示関数
   function showScrollToTopIcon() {
     window.addEventListener('scroll', function () {
       const offsetY = window.scrollY;
@@ -16,16 +18,14 @@ export function scrollTop() {
       }
     });
   }
+  // topへスクロール実行関数
   function scrollToTop() {
     $changeIcon.addEventListener('click', function () {
+      console.log('behavior');
       window.scrollTo({
         top: 0,
         behavior: 'smooth'
       });
     });
   }
-
-
-
-  console.log('scrollTop OK!');
 }
