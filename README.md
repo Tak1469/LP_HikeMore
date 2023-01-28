@@ -15,8 +15,9 @@ docker compose exec web npm run dev
 ## サイト概要
 
 トレッキングガイドのイメージで作成いたしました。
+<br>
 登山のイメージだけでなく自然を満喫できるという気持ちがおこしていくようにシンプルに仕上げました。
-
+<br>
 
 ## 使用技術
 -   HTML
@@ -29,8 +30,16 @@ docker compose exec web npm run dev
 jqueryを使わず、vanillajavascriptで動きをつけました。
 <br>
 パララックスの動きも一部のためライフラリーを使わずに再現いたしました。 
+<br>
+webpackで開発環境を作る過程で開発環境と本番環境の分離に苦戦しましたが、まとめられる部分をcommon.jsへ集約ことができました。
 
-## 開発者
+## 今後の課題
+ワイヤーフレームとデザインカンプを徹底して詰めてくことを学びました。
+<br>
+FLOCSSを使用するにあたり、命名基礎機の不安定さが課題。
+より数をこなすことが重要だと感じました。
+
+## 製作者
 N.Tak
 ## LP IMG
 ![LP-HikeMore_all](https://user-images.githubusercontent.com/123624951/215268858-d983d408-6b95-434a-9e59-59ed462756ac.png)
