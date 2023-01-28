@@ -25,7 +25,7 @@ module.exports = () => merge(commonConf({ outputFile, assetFile }), {
   devServer: {
     static: "./dist",
     open: true,
-    port: 8080,
+    port: 8000,
     // 監視するかフォルダはどれか
     watchFiles: ["src/**/*"],
   },

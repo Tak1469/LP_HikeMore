@@ -1,10 +1,9 @@
 
 // 画面表示時のローディング
 export function loading() {
-  $(window).on('load', function () {
-    $(this).delay(1500).queue(function () {
-      $('#is-loading').addClass('js-loaded');
-    });
+  window.addEventListener('load', function () {
+    setTimeout(function () {
+      document.getElementById('is-loading').classList.add("js-loaded");
+    }, 1500);
   });
-
 }
