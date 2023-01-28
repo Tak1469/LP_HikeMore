@@ -27,6 +27,7 @@ docker compose exec web npm run dev
 -   Babel
 
 jqueryを使わず、vanillajavascriptで動きをつけました。
+<br>
 パララックスの動きも一部のためライフラリーを使わずに再現いたしました。 
 
 ## 開発者
