@@ -1,8 +1,9 @@
 // スライダー実行関数
 export function topSlider() {
-  $(window).on('load', function () {
+  window.addEventListener('load', function () {
     sliderStart();
   });
+
   function sliderStart() {
     // スライダー画像要素を取得
     const sliderItem = document.querySelectorAll('.is-slider__item');
