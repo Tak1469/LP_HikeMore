@@ -6,7 +6,7 @@ http://hikemore.n-taks.com/
 以下のコマンドを実行して、表示できます。
 
 ```bash
-git https://github.com/Tak1469/LP_HikeMore.git
+git clone https://github.com/Tak1469/LP_HikeMore.git
 cd LP_HikeMore
 npm install
 npm run dev
