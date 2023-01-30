@@ -75,12 +75,6 @@
       transform: translateX(-50%);
       content: "";
       background: b.$font-color_default;
-      @include b.md() {
-        width: 150px;
-      }
-      @include b.mq() {
-        width: 100px;
-      }
     }
   }
   &__line2 {
@@ -99,6 +93,9 @@
   &__sub-title {
     font-size: b.rem(16);
     margin-bottom: 20px;
+    @include b.mq() {
+      margin-bottom: 10px;
+    }
   }
   &__text {
     font-size: b.rem(16);
