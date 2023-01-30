@@ -8,9 +8,8 @@ http://hikemore.n-taks.com/
 ```bash
 git https://github.com/Tak1469/LP_HikeMore.git
 cd LP_HikeMore
+npm install
 npm run dev
-docker compose exec web npm install
-docker compose exec web npm run dev
 ```
 
 ## サイト概要
