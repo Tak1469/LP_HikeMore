@@ -23,7 +23,6 @@ npm run dev
 -   HTML
 -   CSS、Sass
 -   FontAwesome
--   emailJS
 -   Webpack
 -   Babel
 
