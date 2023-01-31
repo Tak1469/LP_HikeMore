@@ -40,5 +40,6 @@ FLOCSSを使用するにあたり、命名基礎機の不安定さが課題。
 
 ## 製作者
 N.Tak
+ご連絡先 nezimakidance@gmail.com
 ## LP IMG
 ![LP-HikeMore_all](https://user-images.githubusercontent.com/123624951/215268858-d983d408-6b95-434a-9e59-59ed462756ac.png)
