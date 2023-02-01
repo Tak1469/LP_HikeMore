@@ -121,7 +121,6 @@ export function parallax() {
     if (windowHeight + scroll > elemTop) {
       // opacityの数値
       let opacityNum = Math.floor(((scroll + reg) - sectionElement.getBoundingClientRect().top)) / 100;
-      console.log(Math.floor(((scroll + reg) - sectionElement.getBoundingClientRect().top)) / 100);
       // heightの数値
       let heightNum = Math.floor((sectionElement.getBoundingClientRect().top - scroll) / 20);
       // スタイルに反映
