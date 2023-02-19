@@ -25,6 +25,9 @@
     @include b.md(){
       padding-top: 0;
     }
+    a:hover{
+      color:b.$font-color_default ;
+    }
   }
   &__text-block {
     position: absolute;
@@ -67,7 +70,6 @@
   &__line1 {
     margin: 40px;
     &:after {
-      display: block;
       position: absolute;
       width: 200px;
       height: 2px;
@@ -80,7 +82,6 @@
   &__line2 {
     margin: 40px;
     &:after {
-      display: block;
       position: absolute;
       width: 200px;
       height: 2px;
